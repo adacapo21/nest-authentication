@@ -31,15 +31,14 @@ including but not limited to:
 
 - Creating a CUSTOM Auth & Authz workflow for our application (entirely from scratch)
     - Implementing Authentication (via username/password)
-    - How to hash passwords
+    - Hash passwords
     - Implementing sign-in & sign-out
         - via username/password
         - via Google Auth
 
-    - Learning about JWTs and how to implement them
-    - How we can protect our Routes in our application (with Authentication)
-    - How to create PUBLIC routes
-    - Implementing Refresh tokens & how to invalidate Tokens
+    - Protect our Routes in our application (with Authentication)
+    - Create PUBLIC routes
+    - Refresh tokens & how to invalidate Tokens
     - Different types of Authorization
         - Role-based access control
         - claims-based authorization
