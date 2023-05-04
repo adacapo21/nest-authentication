@@ -25,7 +25,26 @@
 ## Description
 Authentication && Authorization NestJS
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+**Purpose of this application is to:**
+Cover many key concepts of both Authentication & Authorization,
+including but not limited to:
+
+- Creating a CUSTOM Auth & Authz workflow for our application (entirely from scratch)
+    - Implementing Authentication (via username/password)
+    - How to hash passwords
+    - Implementing sign-in & sign-out
+        - via username/password
+        - via Google Auth
+
+    - Learning about JWTs and how to implement them
+    - How we can protect our Routes in our application (with Authentication)
+    - How to create PUBLIC routes
+    - Implementing Refresh tokens & how to invalidate Tokens
+    - Different types of Authorization
+        - Role-based access control
+        - claims-based authorization
+        - Policy-based authorization
+
 
 ## Installation
 
@@ -59,37 +78,3 @@ $ npm run test:e2e
 $ npm run test:cov
 ```
 
-**Purpose of this application is to:**
-Will cover many key concepts of both Authentication & Authorization, 
-including but not limited to:
-
-- Creating a CUSTOM Auth & Authz workflow for our application (entirely from scratch)
-    - Implementing Authentication (via username/password)
-    - How to hash passwords
-    - Implementing sign-in & sign-out
-      - via username/password
-      - via Google Auth
-    
-    - Learning about JWTs and how to implement them
-    - How we can protect our Routes in our application (with Authentication)
-    - How to create PUBLIC routes
-    - Implementing Refresh tokens & how to invalidate Tokens
-    - Different types of Authorization
-      - Role-based access control
-      - claims-based authorization
-      - Policy-based authorization
-
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
