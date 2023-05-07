@@ -18,7 +18,9 @@ import { Roles } from '../iam/authorization/decorators/roles.decorator';
 // import { Permissions } from '../iam/authorization/decorators/permission.decorator';
 import { FrameworkContributorPolicy } from '../iam/authorization/policies/framework-contributor.policy';
 import { Policies } from '../iam/authorization/decorators/policies.decorator';
-
+import { AuthType } from '../iam/authentication/enums/auth-type.enum';
+import { Auth } from '../iam/authentication/decorators/auth.decorator';
+@Auth(AuthType.Bearer, AuthType.ApiKey)
 @Controller('coffees')
 export class CoffeesController {
   constructor(private readonly coffeesService: CoffeesService) {}

@@ -16,11 +16,14 @@ import { RefreshTokenIdsStorage } from './authentication/refresh-token-ids.stora
 import { PolicyHandlerStorage } from './authorization/policies/policy-handlers.storage';
 import { FrameworkContributorPolicyHandler } from './authorization/policies/framework-contributor.policy';
 import { PoliciesGuard } from './authorization/guards/policies.guard';
+import { ApiKeysService } from './authentication/api-keys.service';
+import { ApiKeyGuard } from './authentication/guards/api-key/api-key.guard';
+import { ApiKey } from '../users/api-keys/entities/api-key.entity/api-key.entity';
 
 @Module({
   imports: [
     ConfigModule.forRoot({ load: [jwtConfig] }),
-    TypeOrmModule.forFeature([User]),
+    TypeOrmModule.forFeature([User, ApiKey]),
     JwtModule.registerAsync(jwtConfig.asProvider()),
   ],
   controllers: [AuthenticationController],
@@ -42,6 +45,8 @@ import { PoliciesGuard } from './authorization/guards/policies.guard';
     RefreshTokenIdsStorage,
     PolicyHandlerStorage,
     FrameworkContributorPolicyHandler,
+    ApiKeysService,
+    ApiKeyGuard,
   ],
 })
 export class IamModule {}
