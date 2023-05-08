@@ -19,6 +19,8 @@ import { PoliciesGuard } from './authorization/guards/policies.guard';
 import { ApiKeysService } from './authentication/api-keys.service';
 import { ApiKeyGuard } from './authentication/guards/api-key/api-key.guard';
 import { ApiKey } from '../users/api-keys/entities/api-key.entity/api-key.entity';
+import { GoogleAuthenticationService } from './authentication/social/google-authentication.service';
+import { GoogleAuthenticationController } from './authentication/social/google-authentication.controller';
 
 @Module({
   imports: [
@@ -26,7 +28,7 @@ import { ApiKey } from '../users/api-keys/entities/api-key.entity/api-key.entity
     TypeOrmModule.forFeature([User, ApiKey]),
     JwtModule.registerAsync(jwtConfig.asProvider()),
   ],
-  controllers: [AuthenticationController],
+  controllers: [AuthenticationController, GoogleAuthenticationController],
   providers: [
     {
       provide: HashingService, // abstract class
@@ -47,6 +49,7 @@ import { ApiKey } from '../users/api-keys/entities/api-key.entity/api-key.entity
     FrameworkContributorPolicyHandler,
     ApiKeysService,
     ApiKeyGuard,
+    GoogleAuthenticationService,
   ],
 })
 export class IamModule {}

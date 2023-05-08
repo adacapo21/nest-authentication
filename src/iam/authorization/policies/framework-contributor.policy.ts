@@ -20,7 +20,7 @@ export class FrameworkContributorPolicyHandler
     policy: FrameworkContributorPolicy,
     user: ActiveUserData,
   ): Promise<void> {
-    const isContributor = user.email.endsWith('@nestjs.com');
+    const isContributor = user.email.endsWith('@gmail.com');
     if (!isContributor) {
       throw new Error('User is not a contributor');
     }
