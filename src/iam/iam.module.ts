@@ -21,6 +21,9 @@ import { ApiKeyGuard } from './authentication/guards/api-key/api-key.guard';
 import { ApiKey } from '../users/api-keys/entities/api-key.entity/api-key.entity';
 import { GoogleAuthenticationService } from './authentication/social/google-authentication.service';
 import { GoogleAuthenticationController } from './authentication/social/google-authentication.controller';
+import { OtpAuthenticationService } from './authentication/otp-authentication.service';
+import { SessionAuthenticationService } from './authentication/session-authentication.service';
+import { SessionAuthenticationController } from './authentication/session-authentication.controller';
 
 @Module({
   imports: [
@@ -28,7 +31,7 @@ import { GoogleAuthenticationController } from './authentication/social/google-a
     TypeOrmModule.forFeature([User, ApiKey]),
     JwtModule.registerAsync(jwtConfig.asProvider()),
   ],
-  controllers: [AuthenticationController, GoogleAuthenticationController],
+  controllers: [AuthenticationController, GoogleAuthenticationController, SessionAuthenticationController],
   providers: [
     {
       provide: HashingService, // abstract class
@@ -50,6 +53,8 @@ import { GoogleAuthenticationController } from './authentication/social/google-a
     ApiKeysService,
     ApiKeyGuard,
     GoogleAuthenticationService,
+    OtpAuthenticationService,
+    SessionAuthenticationService,
   ],
 })
 export class IamModule {}
